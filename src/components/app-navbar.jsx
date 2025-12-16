@@ -265,6 +265,14 @@ export default function AppNavbar() {
                 <XMarkIcon aria-hidden="true" className="size-6" />
               </button>
             </div>
+            
+            {user && (
+              <div className="px-4 pb-2">
+                <span className="block font-medium text-gray-900 border-b border-gray-200 pb-2">
+                  🎉 Welcome {user.user_metadata?.firstName}
+                </span>
+              </div>
+            )}
 
             {/* Links */}
             <TabGroup className="mt-2">
@@ -338,6 +346,7 @@ export default function AppNavbar() {
 
             { user ? (
               <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+
               <div className="flow-root">
                 <Link href="#" className="-m-2 block p-2 font-medium text-gray-900">
                   My Account
