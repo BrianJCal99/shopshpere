@@ -517,7 +517,7 @@ export default function AppNavbar() {
               <div className="ml-4 flex lg:ml-0">
                 <Link href="/">
                   <span className="sr-only">Your Company</span>
-                  <div className="h-auto w-auto">ShopSphere</div>
+                  <div className="h-auto w-auto">WearCollective</div>
                 </Link>
               </div>
 

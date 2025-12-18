@@ -40,7 +40,7 @@ export default function SignUp() {
       dispatch(resetError()); // Reset any previous error state
 
       // Dispatch the sign-in action and wait for the result
-      const result  = await dispatch(
+      const result = await dispatch(
         signUpUser({
           email: formData.email,
           password: formData.password,
@@ -59,15 +59,15 @@ export default function SignUp() {
     }
   };
 
-  if (!isClient){
+  if (!isClient) {
     return null;
   }
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h1 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-blue-600">
-          ShopSphere
+        <h1 className="mt-10 text-center text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight" >
+          WearCollective
         </h1>
         <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
           Create your new account
