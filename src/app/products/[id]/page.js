@@ -16,6 +16,61 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+const ProductSkeleton = () => {
+  return (
+    <div className="bg-white animate-pulse">
+      <div className="p-[80px]">
+        {/* Image gallery */}
+        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+          <div className="aspect-[4/5] size-full rounded-lg bg-gray-200 object-cover sm:rounded-lg lg:aspect-auto" />
+          <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+            <div className="aspect-[3/2] w-full rounded-lg bg-gray-200" />
+            <div className="aspect-[3/2] w-full rounded-lg bg-gray-200" />
+          </div>
+          <div className="hidden size-full rounded-lg bg-gray-200 lg:block" />
+        </div>
+
+        {/* Product info */}
+        <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
+          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+            <div className="h-8 w-64 bg-gray-200 rounded mb-4" />
+            <div className="h-6 w-32 bg-gray-200 rounded" />
+          </div>
+
+          {/* Options */}
+          <div className="mt-4 lg:row-span-3 lg:mt-0">
+            <div className="h-10 w-24 bg-gray-200 rounded mb-8" />
+            <div className="space-y-4">
+              <div className="h-6 w-16 bg-gray-200 rounded" />
+              <div className="flex gap-2">
+                <div className="h-8 w-8 rounded-full bg-gray-200" />
+                <div className="h-8 w-8 rounded-full bg-gray-200" />
+                <div className="h-8 w-8 rounded-full bg-gray-200" />
+              </div>
+              <div className="h-6 w-16 bg-gray-200 rounded mt-6" />
+              <div className="grid grid-cols-4 gap-4">
+                <div className="h-10 bg-gray-200 rounded" />
+                <div className="h-10 bg-gray-200 rounded" />
+                <div className="h-10 bg-gray-200 rounded" />
+                <div className="h-10 bg-gray-200 rounded" />
+              </div>
+              <div className="h-12 w-full bg-gray-200 rounded mt-10" />
+            </div>
+          </div>
+
+          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+            <div className="space-y-4">
+              <div className="h-4 w-full bg-gray-200 rounded" />
+              <div className="h-4 w-full bg-gray-200 rounded" />
+              <div className="h-4 w-3/4 bg-gray-200 rounded" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function ItemPage() {
   const dispatch = useDispatch();
   const params = useParams();
@@ -23,6 +78,7 @@ export default function ItemPage() {
 
   // Access items from the Redux store
   const items = useSelector((state) => state.items.items);
+  const status = useSelector((state) => state.items.status);
 
   // Find the item matching the dynamic `id`
   const item = items.find((item) => item.id.toString() === id);
@@ -33,6 +89,13 @@ export default function ItemPage() {
   const [selectedSize, setSelectedSize] = useState(
     item?.sizes?.length > 0 ? item?.sizes[0] : null
   );
+
+  useEffect(() => {
+    if (item) {
+      setSelectedColor(item.colors?.[0] || null);
+      setSelectedSize(item.sizes?.[0] || null);
+    }
+  }, [item]);
 
   // Check if the item is in the cart and update UI accordingly
   const cartItem = useSelector((state) =>
@@ -53,6 +116,10 @@ export default function ItemPage() {
 
   if (!isClient) {
     return null;
+  }
+
+  if (status === "loading") {
+    return <ProductSkeleton />;
   }
 
   // Handle case when the item is not found
