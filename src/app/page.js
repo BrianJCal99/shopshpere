@@ -67,15 +67,20 @@ export default function Example() {
     <div className="pb-24 sm:pb-32">
       <div className="mx-auto max-w-7xl pt-6 px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-5xl font-semibold tracking-tight sm:text-7xl">Shop With Us</h2>
-          <p className="mt-8 text-pretty text-lg font-medium sm:text-xl/8">
-            Discover a world of fashion at your fingertips with our carefully curated collection of stylish, high-quality clothing, offering timeless elegance and on-trend designs to suit every occasion and personality.
+          <h1 className="text-6xl font-extrabold tracking-tighter text-gray-900 sm:text-8xl lg:text-9xl">
+            WEAR<span className="text-indigo-600">COLLECTIVE.</span>
+          </h1>
+          <p className="mt-6 text-xl text-gray-600 max-w-xl font-light leading-relaxed">
+            Curating timeless elegance and modern trends. Our collection is designed for those who value quality and minimalist aesthetics.
           </p>
         </div>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-          <h2 className="text-2xl font-bold text-gray-900">Our Collections</h2>
+          <div className="mb-10">
+            <h2 className="text-sm font-bold tracking-[0.2em] text-indigo-600 uppercase mb-2">Explore</h2>
+            <p className="text-4xl font-black text-gray-900 tracking-tighter sm:text-5xl">OUR COLLECTIONS</p>
+          </div>
 
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-6 lg:space-y-0">
             {callouts.map((callout) => (
@@ -101,9 +106,9 @@ export default function Example() {
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-5 place-items-center">
             {stats.map((stat) => (
-              <div key={stat.name} className="flex flex-col-reverse gap-1">
-                <dt className="text-base/7 text-center">{stat.name}</dt>
-                <dd className="text-4xl font-semibold tracking-tight text-center">{stat.value}</dd>
+              <div key={stat.name} className="flex flex-col-reverse gap-2">
+                <dt className="text-xs font-bold uppercase tracking-[0.15em] text-gray-500 text-center">{stat.name}</dt>
+                <dd className="text-5xl font-black tracking-tighter text-gray-900 text-center">{stat.value}</dd>
               </div>
             ))}
           </dl>

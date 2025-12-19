@@ -516,7 +516,9 @@ export default function AppNavbar() {
               <div className="ml-4 flex lg:ml-0">
                 <Link href="/">
                   <span className="sr-only">Your Company</span>
-                  <div className="h-auto w-auto">WearCollective</div>
+                  <div className="text-xl font-black tracking-tighter text-gray-900 sm:text-2xl">
+                    WEAR<span className="text-indigo-600">COLLECTIVE.</span>
+                  </div>
                 </Link>
               </div>
 

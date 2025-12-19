@@ -8,8 +8,10 @@ const AppFooter = () => {
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0">
-                  <Link href="/" className="flex items-center">
-                      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">WearCollective</span>
+                  <Link href="/" className="group">
+                      <div className="text-2xl font-black tracking-tighter text-gray-900 dark:text-white transition-transform duration-300 group-hover:scale-105">
+                        WEAR<span className="text-indigo-600">COLLECTIVE.</span>
+                      </div>
                   </Link>
               </div>
               <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
@@ -64,7 +66,8 @@ const AppFooter = () => {
           </div>
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
-              <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {new Date().getFullYear()} <Link href="/" className="hover:underline">WearCollective</Link>. All Rights Reserved.
+              <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © {new Date().getFullYear()} <Link href="/" className="font-bold hover:text-indigo-600 transition-colors">WEARCOLLECTIVE</Link>. All Rights Reserved.
               </span>
           </div>
         </div>
