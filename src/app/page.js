@@ -108,6 +108,53 @@ export default function Example() {
           </dl>
         </div>
       </div>
+      {/* Newsletter Section */}
+      <div className="mt-32 sm:mt-48 px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative isolate overflow-hidden bg-slate-50 px-6 py-24 shadow-sm rounded-3xl border border-gray-100 sm:px-24 xl:py-32">
+            <h2 className="mx-auto max-w-2xl text-center text-4xl font-black tracking-tight text-gray-900 sm:text-6xl">
+              Stay in the loop.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-center text-lg leading-8 text-gray-600">
+              Subscribe to our newsletter for exclusive drops, seasonal previews, and sustainable fashion insights.
+            </p>
+            <form className="mx-auto mt-10 flex max-w-md gap-x-4">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email-address"
+                name="email"
+                type="email"
+                required
+                placeholder="Enter your email"
+                autoComplete="email"
+                className="min-w-0 flex-auto rounded-full border-0 bg-white px-6 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 focus:ring-2 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+              />
+              <button
+                type="submit"
+                className="flex-none rounded-full bg-gray-900 px-8 py-3 text-sm font-black text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-transform hover:scale-105"
+              >
+                Join Now
+              </button>
+            </form>
+            <svg
+              viewBox="0 0 1024 1024"
+              aria-hidden="true"
+              className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
+            >
+              <circle r={512} cx={512} cy={512} fill="url(#newsletter-gradient)" fillOpacity="0.3" />
+              <defs>
+                <radialGradient id="newsletter-gradient">
+                  <stop stopColor="#5a67d8" />
+                  <stop offset={1} stopColor="#5a67d8" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
+

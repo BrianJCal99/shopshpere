@@ -347,7 +347,7 @@ export default function AppNavbar() {
               <div className="space-y-6 border-t border-gray-200 px-4 py-6">
 
               <div className="flow-root">
-                <Link href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                <Link href="/account/profile" className="-m-2 block p-2 font-medium text-gray-900">
                   My Account
                 </Link>
               </div>
@@ -624,7 +624,7 @@ export default function AppNavbar() {
                     🎉 Welcome {user.user_metadata?.firstName}
                   </span>
                   <span aria-hidden="true" className="h-6 w-px bg-gray-200" />
-                  <Link href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  <Link href="/account/profile" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     My Account
                   </Link>
                   <span aria-hidden="true" className="h-6 w-px bg-gray-200" />

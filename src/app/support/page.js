@@ -28,28 +28,28 @@ const SupportPage = () => {
         {/* Support Topics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           <TopicCard
+            icon={<User className="w-8 h-8 text-purple-600" />}
+            title="Account & Profile"
+            description="Manage your account, preferences, and password."
+            href="/account/profile"
+          />
+          <TopicCard
             icon={<Package className="w-8 h-8 text-blue-600" />}
             title="Orders & Shipping"
             description="Track packages, edit orders, and shipping info."
-            href="#"
+            href="/account/orders"
           />
           <TopicCard
             icon={<RefreshCw className="w-8 h-8 text-green-600" />}
             title="Returns & Refunds"
             description="Start a return, check status, or read our policy."
-            href="#"
-          />
-          <TopicCard
-            icon={<User className="w-8 h-8 text-purple-600" />}
-            title="Account & Profile"
-            description="Manage your account, preferences, and password."
-            href="#"
+            href="/account/returns"
           />
           <TopicCard
             icon={<HelpCircle className="w-8 h-8 text-orange-600" />}
             title="Product & Sizing"
             description="Size guides, care instructions, and product details."
-            href="#"
+            href="/product-sizing"
           />
         </div>
 
