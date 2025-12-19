@@ -240,7 +240,7 @@ export default function AppNavbar() {
   }
 
   return (
-    <div className="bg-white fixed w-full">
+    <div className="bg-white fixed w-full z-50">
       {/* Mobile menu */}
       <Dialog open={open} onClose={setOpen} className="relative z-40 lg:hidden">
         <DialogBackdrop
