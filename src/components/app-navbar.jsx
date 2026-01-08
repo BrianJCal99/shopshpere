@@ -699,7 +699,7 @@ function ShoppingCart({ open, onClose, items, totalPrice, totalQuantity, onCheck
                         <ul role="list" className="-my-6 divide-y divide-gray-200">
                           {items.map((product) => (
                             <CartItem
-                              key={`${product.name}-${product.color}-${product.size}`}
+                              key={product.cartId}
                               product={product}
                               dispatch={dispatch}
                             />
