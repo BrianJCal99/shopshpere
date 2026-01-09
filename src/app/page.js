@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 import NewsletterForm from "@/components/newsletter-form"
+import NewsletterPopup from "@/components/newsletter-popup"
 
 const links = [
   { name: "Men's Collection", href: '/products/men' },
@@ -115,6 +116,7 @@ export default function Example() {
         </div>
       </div>
       <NewsletterForm />
+      <NewsletterPopup />
     </div>
   )
 }
